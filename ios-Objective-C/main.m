@@ -32,8 +32,53 @@ int main(int argc, char * argv[]) {
     [person setName:@"Bob"];
     [person setAge: 30];
     NSLog(@"%@, %ld",[person name], (long)[person age]);
-    return 0;
     
+    NSNumber *num1 = @LONG_MAX;
+    NSNumber *num2 = @-4.2f;
+    int a = [num1 intValue];
+    long b = [num1 longValue];
+    int c = num2.intValue;
+    float d = num2.floatValue;
+    BOOL e = num2.boolValue;
+    
+//    NSURL *url = [NSURL URLWithString:@"https://www.sogou.com/"];
+//    NSString *content = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+//    NSLog(@"%@", content);
+    
+    NSArray *arr = @[@1, @2, @3, @4];
+    for (int i = 0; i < [arr count]; i++) {
+        NSNumber *value = arr[i];
+        NSLog(@"%@", value);
+    }
+
+    for (NSNumber *value in arr) {
+        NSLog(@"%@", value);
+    }
+    NSString *str = [arr componentsJoinedByString:@"-"];
+    NSLog(@"%@", str);
+    
+    NSArray *arr2 = [@"1-2-3-4" componentsSeparatedByString:@"-"];
+    NSLog(@"%@", arr2);
+    
+//    NSDictionary *dic = @{@"key1":@"value1", @"key2":@"value2"};
+//
+//    NSUInteger count = [dic count];
+//
+//    NSString *val1 = [dic objectForKey:@"key1"];
+//    NSString *val2 = dic[@"key2"];
+//
+//    NSArray *keys = [dic allKeys];
+//    NSArray *values = [dic allValues];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:@{@"key1":@"value1", @"key2":@"value2"}];
+
+    //如果value3、value4改为nil分别有什么效果？
+    [dic setObject:@"newvalue2" forKey:@"key2"];
+    [dic setObject:@"value3" forKey:@"key3"];
+    dic[@"key4"] = @"value4";
+
+    [dic removeObjectForKey:@"key1"];
+
+    NSLog(@"%@", dic);
     
 }
 

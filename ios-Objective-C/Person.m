@@ -42,5 +42,9 @@
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ %ld", _name, (long)_age];
 }
+- (void)printName {
+    NSLog(@"%@", self.name);
+}
+
 
 @end

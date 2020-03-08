@@ -7,8 +7,8 @@
 //
 
 #import "Person+Read.h"
+#import <UIKit/UIKit.h>
 
-#import <AppKit/AppKit.h>
 
 
 @implementation Person (Read)

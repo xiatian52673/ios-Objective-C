@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PrintProtocal.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Person : NSObject
+@interface Person : NSObject <PrintProtocal>
 
 @property(nonatomic, strong) NSString *name;
 @property(nonatomic, assign) NSInteger age;
